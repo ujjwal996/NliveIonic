@@ -1,0 +1,35 @@
+<ion-navbar *navbar>
+
+  <button menuToggle>
+    <ion-icon name="menu">
+    </ion-icon>
+  </button>
+
+  <ion-title>Today's Calendar</ion-title>
+</ion-navbar>
+
+<ion-content padding class="calendar">
+  <ion-list #calendarItemsList [hidden]="todayTodo === 0">
+
+    <ion-item-group *ngFor="let Todo of Todos" [hidden]="Todo.hide">
+
+      <ion-item-divider sticky>
+        {{Todo.time}}
+      </ion-item-divider>
+
+      <ion-item *ngFor="let activity of Todo.activities" #item [hidden]="activity.hide">
+
+        <button ion-item (click)="choseActivity(session)">
+          <h3>{{activity.name}}</h3>
+          <p>
+            activity.properties
+          </p>
+        </button>
+      </ion-item>
+
+    </ion-item-group>
+
+  </ion-list>
+
+
+</ion-content>

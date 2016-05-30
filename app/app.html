@@ -1,0 +1,31 @@
+<ion-menu [content] = "appcontent" id="main-menu">
+  <ion-title>
+    Nlive
+  </ion-title>
+  <ion-content>
+    <ion-list>
+      <button ion-item (click)="openPage(dashboard)">
+        Dashboard
+        <ion-icon name="more"></ion-icon>
+      </button>
+      <button ion-item (click)="openPage(goals)">
+        Goals
+        <ion-icon name="fireball"></ion-icon>
+      </button>
+      <button ion-item (click)="openPage(connect)">
+        Connect
+        <ion-icon name="people"></ion-icon>
+      </button>
+      <button ion-item (click)="openPage(calendar)">
+        Calendar
+        <ion-icon name="calendar"></ion-icon>
+      </button>
+      <button ion-item (click)="logout()">
+        logout
+        <ion-icon name="log-out"></ion-icon>
+      </button>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+
+<ion-nav #appcontent [root]="rootPage" id="app-nav"></ion-nav>

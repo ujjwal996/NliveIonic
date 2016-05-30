@@ -1,0 +1,36 @@
+<ion-navbar *navbar>
+  <button menuToggle>
+    <ion-icon name="menu"></ion-icon>
+  </button>
+  <ion-title>Goals
+  <ion-icon name= "ion-fireball">
+  </ion-icon></ion-title>
+</ion-navbar>
+
+<ion-content padding class="goals">
+  <ion-buttons>
+    <button (click)= "clickedAddGoal()">
+      <ion-icon name="add"></ion-icon>
+    </button>
+  </ion-buttons>
+
+  <ion-card>
+    <ion-card-header>
+      Goal
+      </ion-card-header>
+      <ion-card-content>
+        <ion-list >
+          <ion-item>
+            <ion-label>requirement.name</ion-label>
+            <ion-toggle checked="true"></ion-toggle>
+          </ion-item>
+          <ion-item>
+            <button clear>action1</button>
+            <button clear>action2</button>
+            <button clear>action3</button>
+          </ion-item>
+        </ion-list>
+      </ion-card-content>
+      </ion-card>
+
+</ion-content>

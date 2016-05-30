@@ -1,0 +1,28 @@
+<ion-navbar *navbar>
+    <button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+  <ion-title>
+    <ion-icon name = "people">
+    </ion-icon>
+  </ion-title>
+</ion-navbar>
+
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      Login for us to help you stay Alive
+    </ion-card-header>
+    <ion-card-content>
+      <ion-item>
+        <form [ngFormControl] = "loginform" >
+          <ion-label> UserName </ion-label>
+          <ion-input type="text" ngControl = "username"></ion-input>
+           <ion-label> Password </ion-label>
+           <ion-input type="text" ngControl = "password"></ion-input>
+        </form>
+        <button (click)="login()"> Login </button>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

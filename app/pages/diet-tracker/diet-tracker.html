@@ -1,0 +1,32 @@
+<ion-navbar *navbar>
+
+  <button menuToggle>
+    <ion-icon name="menu"></ion-icon>
+  </button>
+
+  <ion-title>dashboard-diet-tracker</ion-title>
+</ion-navbar>
+
+<ion-content padding class="dashboard-diet-tracker">
+  <ion-list #DietSchedule>
+    <ion-item *ngFor="let meal of day.meals">
+      <ion-card>
+      <ion-card-header>
+        {{meal.time}}
+      </ion-card-header>
+      <ion-card-content>
+        <ion-item *ngFor="let item of meal.items">
+          {{item.name}}
+          {{item.quantity}}
+          <ion-checkbox [checked]="item.checked" value="Followed"></ion-checkbox>
+    </ion-card-content>
+  </ion-card>
+      <button (click)= "viewAlternates()"> Want a change? Look for alternatives here
+        <ion-icon name="levels"></ion-icon>
+       </button>
+
+     </ion-item>
+
+  </ion-list>
+
+</ion-content>
