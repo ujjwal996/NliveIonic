@@ -14,7 +14,7 @@ import {DashboardTabs} from './pages/tabs/tabs';
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = GoalsPage;
+  rootPage: any = DashboardTabs;
   dashboard = DashboardTabs;
   goals = GoalsPage;
   connect = ConnectPage;

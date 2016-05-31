@@ -2,10 +2,13 @@ import {Page, NavController} from 'ionic-angular';
 
 
 @Page({
-  templateUrl: 'build/pages/diet-tracker/diet-racker.html',
+  templateUrl: 'build/pages/diet-tracker/diet-tracker.html',
 })
 export class DietTrackerPage {
-  day = [{
+
+
+  days = [{
+    date:'18th November',
     meals :[{
       time : "breakfast",
       items : [{
@@ -39,4 +42,11 @@ export class DietTrackerPage {
   }];
 
   constructor(public nav: NavController) {}
+
+
+  showAlternatives(){
+    console.log("present action sheet and update tracker with user's change")
+  }
+
+
 }

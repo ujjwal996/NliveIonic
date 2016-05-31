@@ -4,29 +4,42 @@
     <ion-icon name="menu"></ion-icon>
   </button>
 
-  <ion-title>dashboard-diet-tracker</ion-title>
+  <ion-title>Diet Tracker</ion-title>
 </ion-navbar>
 
 <ion-content padding class="dashboard-diet-tracker">
-  <ion-list #DietSchedule>
-    <ion-item *ngFor="let meal of day.meals">
-      <ion-card>
-      <ion-card-header>
-        {{meal.time}}
-      </ion-card-header>
-      <ion-card-content>
-        <ion-item *ngFor="let item of meal.items">
-          {{item.name}}
-          {{item.quantity}}
-          <ion-checkbox [checked]="item.checked" value="Followed"></ion-checkbox>
-    </ion-card-content>
-  </ion-card>
-      <button (click)= "viewAlternates()"> Want a change? Look for alternatives here
-        <ion-icon name="levels"></ion-icon>
-       </button>
 
-     </ion-item>
+  <ion-list *ngFor="let today of days">
 
-  </ion-list>
+    <ion-list-header>
+      {{today.date}}
+    </ion-list-header>
+
+    <ion-item>
+
+      <ion-list *ngFor="let meal of today.meals">
+        <ion-card>
+          <ion-card-header>
+            {{meal.time}}
+          </ion-card-header>
+          <ion-card-content>
+
+            <ion-list *ngFor="let item of meal.items">
+              <ion-item>
+                {{item.name}}
+                {{item.quantity}}
+
+                <button (click)="showAlternatives()"> show alternatives </button>
+              </ion-item>
+              <!--<ion-checkbox [(ngModel)]="item.checked"></ion-checkbox>-->
+            </ion-list>
+
+
+          </ion-card-content>
+        </ion-card>
+    </ion-list>
+
+      </ion-item>
+    </ion-list>
 
 </ion-content>
