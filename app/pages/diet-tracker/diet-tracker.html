@@ -26,11 +26,12 @@
 
             <ion-list *ngFor="let item of meal.items">
               <ion-item>
-                {{item.name}}
-                {{item.quantity}}
+                <h2>{{item.name}}</h2>
+                <p>{{item.quantity}}</p>
+                <ion-checkbox>followed this</ion-checkbox>
 
-                <button (click)="showAlternatives()"> show alternatives </button>
-              </ion-item>
+                </ion-item>
+                <button ion-item (click)="showAlternatives()"> show alternatives </button>
               <!--<ion-checkbox [(ngModel)]="item.checked"></ion-checkbox>-->
             </ion-list>
 

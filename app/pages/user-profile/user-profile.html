@@ -34,7 +34,7 @@
       <ion-card-content>
         <form [ngFormModel]="personalInfo" (submit)="saveFormDetails()">
           <!---->
-          <ion-label fixed> Name </ion-label>
+          <ion-label stacked> Name </ion-label>
           <ion-input ngControl="name" ></ion-input>
 
 
@@ -99,11 +99,11 @@
             </ion-item>
           </ion-list>
 
-          <ion-label floating>Height (in cm)</ion-label>
+          <ion-label stacked>Height (in cm)</ion-label>
           <ion-input type="text" ngControl='height'></ion-input>
           <!--<button clear>Check this if you dont know your height</button>-->
 
-          <ion-label floating>Weight</ion-label>
+          <ion-label stacked>Weight</ion-label>
           <ion-input type="text" ngControl='weight'></ion-input>
 
           <div ngControlGroup='healthCheckbox'>
@@ -324,5 +324,7 @@
 
 
 </div>
+
+<button (click)="getit()"> SHow results </button>
 
 </ion-content>

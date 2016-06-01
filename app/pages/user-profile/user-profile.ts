@@ -1,9 +1,10 @@
 import {Page, NavController} from 'ionic-angular';
 import {FormBuilder, ControlGroup} from '@angular/common';
-
+import {UserData} from '../../providers/user-data/user-data';
 
 @Page({
   templateUrl: 'build/pages/user-profile/user-profile.html',
+  providers : [UserData]
 })
 export class UserProfilePage {
 
@@ -14,7 +15,7 @@ export class UserProfilePage {
   fitnessCheckbox:ControlGroup;
   interestCheckbox:ControlGroup;
 
-  constructor(public nav: NavController, public fb:FormBuilder) {
+  constructor(public nav: NavController, public fb:FormBuilder, public _userdataservice:UserData) {
     this.personalInfo = fb.group({
       name : [''],
       ageRadio:[''],
@@ -69,10 +70,21 @@ export class UserProfilePage {
   }
 
   saveFormDetails(){
-    console.log(this.personalInfo.value);
+    this._userdataservice.setpersonalInfo(this.personalInfo.value);
   }
 
   submitpreferences(){
-    console.log(this.preferencesInfo.value);
+    this._userdataservice.setPreferences(this.preferencesInfo.value);
   }
+
+  getit(){
+  this._userdataservice.getPreferences().then((response)=>{
+    console.log(response);
+    console.log(JSON.parse(response));
+  });
+  this._userdataservice.getpersonalInfo().then((response)=>{
+    console.log(JSON.parse(response));
+  })
+}
+
 }
