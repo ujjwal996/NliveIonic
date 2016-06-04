@@ -20,5 +20,8 @@ export class CalendarPage {
 
   constructor(public nav: NavController) {}
 
+  activateRegimeTracker(name){
+    console.log("Display a Component which keeps track of user's regime");
+  }
 
 }

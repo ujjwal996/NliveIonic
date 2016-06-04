@@ -4,7 +4,7 @@
     <ion-icon name="menu"></ion-icon>
   </button>
 
-  <ion-title>Diet Tracker</ion-title>
+  <ion-title>Diet TRACK</ion-title>
 </ion-navbar>
 
 <ion-content padding class="dashboard-diet-tracker">
@@ -12,7 +12,7 @@
   <ion-list *ngFor="let today of days">
 
     <ion-list-header>
-      {{today.date}}
+      {{todayDate}}
     </ion-list-header>
 
     <ion-item>
@@ -28,10 +28,12 @@
               <ion-item>
                 <h2>{{item.name}}</h2>
                 <p>{{item.quantity}}</p>
-                <ion-checkbox>followed this</ion-checkbox>
+                <ion-checkbox [(ngModel)]="item.checked">
+                  <ion-icon name="tick"></ion-icon>
+                </ion-checkbox>
 
                 </ion-item>
-                <button ion-item (click)="showAlternatives()"> show alternatives </button>
+                <button ion-item (click)="showAlternatives(item)"> show alternatives </button>
               <!--<ion-checkbox [(ngModel)]="item.checked"></ion-checkbox>-->
             </ion-list>
 
@@ -42,5 +44,11 @@
 
       </ion-item>
     </ion-list>
+
+
+      <button full (click)="initNextData()"> <ion-icon name="pulse"></ion-icon>
+        Start a new day
+      </button>
+
 
 </ion-content>

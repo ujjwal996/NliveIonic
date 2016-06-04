@@ -9,22 +9,43 @@
 </ion-navbar>
 
 <ion-content padding class="calendar">
-  <ion-list #calendarItemsList [hidden]="todayTodo === 0">
+
+  <div padding>
+    <ion-segment [(ngModel)]="activityType">
+      <ion-segment-button value="myActivities">
+        My Regimes
+      </ion-segment-button>
+      <ion-segment-button value="allActivities">
+        Explore Regimes
+      </ion-segment-button>
+    </ion-segment>
+  </div>
+
+
+  <div [ngSwitch]="activityType">
+
+
+    <ion-list #calendarItemsList [hidden]="todayTodo === 0" *ngSwitchWhen="'myActivities'">
 
     <ion-item-group *ngFor="let Todo of Todos" [hidden]="Todo.hide">
-
-      <ion-item-divider sticky>
+    <ion-item-divider sticky>
         {{Todo.time}}
       </ion-item-divider>
 
       <ion-item *ngFor="let activity of Todo.activities" #item [hidden]="activity.hide">
 
-        <button ion-item (click)="choseActivity(session)">
-          <h3>{{activity.name}}</h3>
-          <p>
-            activity.properties
-          </p>
-        </button>
+        <ion-card>
+          <ion-card-header>
+            {{activity.name}}
+          </ion-card-header>
+          <ion-card-content>
+            <p>activity info to show</p>
+            <ion-buttons>
+              <button (click)="activateRegimeTracker(activity.name)">Start regime</button>
+            </ion-buttons>
+          </ion-card-content>
+        </ion-card>
+
       </ion-item>
 
     </ion-item-group>
@@ -32,4 +53,27 @@
   </ion-list>
 
 
+  <ion-list *ngSwitchWhen="'allActivities'">
+    <ion-list-header>All Activities</ion-list-header>
+    <ion-item>
+      <ion-card>
+        <ion-card-header>
+          <ion-avatar>
+            This is activity name
+          </ion-avatar>
+        </ion-card-header>
+        <ion-card-content>
+          Activity info
+          <ion-buttons>
+            <button><ion-icon name="add-circle"></ion-icon>Add to my activities</button>
+            <button>Dont like this kind</button>
+            <button>View Details</button>
+
+          </ion-buttons>
+        </ion-card-content>
+      </ion-card>
+    </ion-item>
+  </ion-list>
+
+  </div>
 </ion-content>
