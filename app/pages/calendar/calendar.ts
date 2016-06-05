@@ -1,27 +1,17 @@
 import {Page, NavController} from 'ionic-angular';
-
+import {PersonalCalendar} from '../../components/personal-calendar/personal-calendar';
+import {AllActivities} from '../../components/all-activities/all-activities';
 
 @Page({
   templateUrl: 'build/pages/calendar/calendar.html',
+  directives:[PersonalCalendar,AllActivities]
 })
 export class CalendarPage {
-  todaytodo = 5;
-  Todos =
-    [{
-      hide : false,
-      time : "8.40",
-      activities:[{
-        name : "push-up",
-        hide : false
-    }]
-  }
-];
+
 
 
   constructor(public nav: NavController) {}
 
-  activateRegimeTracker(name){
-    console.log("Display a Component which keeps track of user's regime");
-  }
+
 
 }

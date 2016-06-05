@@ -11,6 +11,7 @@ import {DietTrackerPage} from '../diet-tracker/diet-tracker';
     <ion-tab [root] = "reachout" tabIcon="people" tabTitle="Food Community"></ion-tab>
     <ion-tab [root] = "analytics" tabIcon="pulse" tabTitle="Up till now"></ion-tab>
   </ion-tabs>`
+
 })
 
 @Injectable()
@@ -18,8 +19,8 @@ export class DashboardTabs {
 
   personal:any=UserProfilePage;
   diettracker = DietTrackerPage;
-  analytics:any // = DashboardAnalyticsPage;
-  reachout:any // = DashboardFoodCommunityPage;
+  analytics:any ;// = DashboardAnalyticsPage;
+  reachout:any ;// = DashboardFoodCommunityPage;
   pageChosen : number;
 
   constructor(public navParams : NavParams){}

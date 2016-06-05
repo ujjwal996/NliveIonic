@@ -1,0 +1,167 @@
+
+<ion-card >
+
+<ion-card-header>
+  Preferences to be Alive
+  <button> Edit <ion-item name= "toggle"></ion-item>
+  </button>
+</ion-card-header>
+
+<ion-card-content>
+  <form [ngFormModel]="preferencesInfo" (submit)="submitPreferences()">
+
+  <ion-list radio-group ngControl="foodRadio">
+    <ion-list-header>
+    Food preferences for your diet-plan
+    </ion-list-header>
+  <ion-item>
+    <ion-label>Vegan</ion-label>
+    <ion-radio value="vegan"></ion-radio>
+  </ion-item>
+  <ion-item>
+    <ion-label>Vegetarian</ion-label>
+    <ion-radio value="veg"></ion-radio>
+  </ion-item>
+  <ion-item>
+    <ion-label>Non-Vegetarian</ion-label>
+    <ion-radio value="nonveg"></ion-radio>
+  </ion-item>
+  <ion-item>
+    <ion-label>All of the above</ion-label>
+    <ion-radio value="allfood"></ion-radio>
+  </ion-item>
+</ion-list>
+  <ion-item-divider>
+  </ion-item-divider>
+
+
+<div ngControlGroup = "fitnessCheckbox">
+  <ion-list >
+  <ion-list-header>
+    Fitness Goal
+  </ion-list-header>
+  <ion-item>
+    <ion-label>Weight-loss</ion-label>
+    <ion-checkbox ngControl="weightloss"></ion-checkbox>
+  </ion-item>
+  <ion-item>
+    <ion-label>Weight-gain</ion-label>
+    <ion-checkbox ngControl="weightgain"></ion-checkbox>
+  </ion-item>
+  <ion-item>
+    <ion-label>Body-Building</ion-label>
+    <ion-checkbox ngControl="bodyBuilding"></ion-checkbox>
+  </ion-item>
+  <ion-item>
+    <ion-label>Muscle-Toning and -Scuplting</ion-label>
+    <ion-checkbox ngControl="muscleToning"></ion-checkbox>
+  </ion-item>
+  <ion-item>
+    <ion-label>Inner Health centric</ion-label>
+    <ion-checkbox ngControl="healthy"></ion-checkbox>
+  </ion-item>
+  <ion-item>
+    <ion-label>Radpid weight loss (check out some of our expert programmes and get in touch)</ion-label>
+    <ion-checkbox ngControl="rapidWeightloss"></ion-checkbox>
+  </ion-item>
+</ion-list>
+</div>
+
+
+<ion-list radio-group ngControl="activitylevelRadio">
+  <ion-list-header>
+    Target activity level
+  </ion-list-header>
+  <ion-item>
+    <ion-label>Low activity</ion-label>
+    <ion-radio value="activitylow"></ion-radio>
+  </ion-item>
+  <ion-item>
+    <ion-label>Moderate activity</ion-label>
+    <ion-radio value="moderateactivity"></ion-radio>
+  </ion-item>
+  <ion-item>
+    <ion-label>High intense Training</ion-label>
+    <ion-radio value="hightrainingactivity"></ion-radio>
+  </ion-item>
+
+</ion-list>
+
+
+<div ngControlGroup = "interestCheckbox">
+  <ion-list >
+  <ion-list-header>
+    Let us know all activities that interest you. This will help you in getting directioned results
+  </ion-list-header>
+  <ion-item>
+    <ion-label>Yoga</ion-label>
+    <ion-checkbox ngControl="yoga"></ion-checkbox>
+  </ion-item>
+  <ion-item>
+    <ion-label>Fitness</ion-label>
+    <ion-checkbox ngControl="fitness"></ion-checkbox>
+  </ion-item>
+  <ion-item>
+    <ion-label>Health Recipes</ion-label>
+    <ion-checkbox ngControl="healthRecipes"></ion-checkbox>
+  </ion-item>
+  <ion-item>
+    <ion-label>Healthy living</ion-label>
+    <ion-checkbox ngControl="healthyLiving"></ion-checkbox>
+  </ion-item>
+  <ion-item>
+    <ion-label>Dance</ion-label>
+    <ion-checkbox ngControl="dance"></ion-checkbox>
+  </ion-item>
+  <ion-item>
+    <ion-label>Ab workouts</ion-label>
+    <ion-checkbox ngControl="abs"></ion-checkbox>
+  </ion-item>
+  <ion-item>
+    <ion-label>Core workouts</ion-label>
+    <ion-checkbox ngControl="core"></ion-checkbox>
+  </ion-item>
+  <ion-item>
+    <ion-label>Tips - reading and listening</ion-label>
+    <ion-checkbox ngControl="tips"></ion-checkbox>
+  </ion-item>
+  <ion-item>
+    <ion-label>Myths and Facts - reading </ion-label>
+    <ion-checkbox ngControl="myths"></ion-checkbox>
+  </ion-item>
+  <ion-item>
+    <ion-label>Weight loss</ion-label>
+    <ion-checkbox ngControl="weightLoss"></ion-checkbox>
+  </ion-item>
+  <ion-item>
+    <ion-label>Diet Regimes</ion-label>
+    <ion-checkbox ngControl="dietRegimes"></ion-checkbox>
+  </ion-item>
+  <ion-item>
+    <ion-label>Cardios</ion-label>
+    <ion-checkbox ngControl="cardio"></ion-checkbox>
+  </ion-item>
+  <ion-item>
+    <ion-label>Excercise Equipments</ion-label>
+    <ion-checkbox ngControl="excercise"></ion-checkbox>
+  </ion-item>
+  <ion-item>
+    <ion-label>What's new (Health world)</ion-label>
+    <ion-checkbox ngControl="new"></ion-checkbox>
+  </ion-item>
+  <ion-item>
+    <ion-label>Quotes</ion-label>
+    <ion-checkbox ngControl="quotes"></ion-checkbox>
+  </ion-item>
+  <ion-item>
+    <ion-label>Fun facts</ion-label>
+    <ion-checkbox ngControl="funFacts"></ion-checkbox>
+  </ion-item>
+</ion-list>
+</div>
+<button (click)="submitPreferences()">Am ready to go</button>
+</form>
+</ion-card-content>
+</ion-card>
+
+<button (click)="showResults()">Log Input</button>
